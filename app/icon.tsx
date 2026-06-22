@@ -1,36 +1,25 @@
 import { ImageResponse } from 'next/og'
-import { readFile } from 'node:fs/promises'
-import { join } from 'node:path'
+import BrandMark from './components/BrandMark'
 
 export const size = { width: 32, height: 32 }
 export const contentType = 'image/png'
 
-export default async function Icon() {
-  const cormorantItalic = await readFile(join(process.cwd(), 'assets/Cormorant-Italic.woff'))
-
+export default function Icon() {
   return new ImageResponse(
     (
       <div
         style={{
           width: '100%',
           height: '100%',
-          background: '#000000',
+          background: 'transparent',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          fontFamily: 'Cormorant',
-          fontSize: 26,
-          fontStyle: 'italic',
-          fontWeight: 400,
-          color: '#FF6B47',
         }}
       >
-        o
+        <BrandMark size={32} />
       </div>
     ),
-    {
-      ...size,
-      fonts: [{ name: 'Cormorant', data: cormorantItalic, style: 'italic', weight: 400 }],
-    }
+    size
   )
 }
