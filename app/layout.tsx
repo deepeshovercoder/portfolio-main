@@ -16,20 +16,20 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://omsharma.dev'),
-  title: { default: 'Om Sharma', template: '%s · Om Sharma' },
-  description: 'Engineer building real-time AI systems. Bangalore.',
+  title: { default: 'Deepesh Chourasia', template: '%s · Deepesh Chourasia' },
+  description: 'Engineer building real-time AI systems. Gurugram.',
   openGraph: {
-    title: 'Om Sharma',
-    description: 'Engineer building real-time AI systems. Bangalore.',
-    url: 'https://omsharma.dev',
-    siteName: 'Om Sharma',
+    title: 'Deepesh Chourasia',
+    description: 'Engineer building real-time AI systems. Gurugram.',
+    url: 'https://deepeshworkfolio.netlify.app',
+    siteName: 'Deepesh Chourasia',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Om Sharma',
-    description: 'Engineer building real-time AI systems. Bangalore.',
+    title: 'Deepesh Chourasia',
+    description: 'Engineer building real-time AI systems. Gurugram.',
   },
   robots: { index: true, follow: true },
 }

@@ -837,6 +837,30 @@ body[data-scrolled] .site-nav {
 .cert-id {
   color: var(--color-whisper);
 }
+/* turn the wrapping row into a horizontal scroll-snap track */
+.cert-stars.cert-scroll {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  justify-content: flex-start;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+.cert-stars.cert-scroll::-webkit-scrollbar {
+  display: none;
+}
+.cert-stars.cert-scroll .cert-star {
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+}
+@media (min-width: 768px) {
+  .cert-stars.cert-scroll .cert-star {
+    flex: 0 0 340px;
+  }
+}
+
 
 @media (prefers-reduced-motion: no-preference) {
   @supports (animation-timeline: view()) {

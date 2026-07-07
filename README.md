@@ -1,10 +1,10 @@
-# Om Sharma — Portfolio
+# Deepesh Chourasia — Portfolio
 
 > Engineer building real-time AI systems that feel instant.
 > **Live → [omsharma.dev](https://omsharma.dev)**
 
 This is my personal site. It's also a working sample of how I build: pick the
-cheapest tool that does the job *correctly*, reach for the platform before a
+cheapest tool that does the job _correctly_, reach for the platform before a
 dependency, and let performance and accessibility fall out of the architecture
 rather than get bolted on at the end.
 
@@ -25,7 +25,7 @@ The constraints I held myself to. They're the actual point of the project.
 - **Animation belongs on the compositor.** Every transition animates only
   `transform` / `opacity` / `clip-path`, so it runs on the GPU and never blocks
   the main thread — the page stays responsive to input while it moves.
-- **The static page is the real page.** Every animated element's *resting* state
+- **The static page is the real page.** Every animated element's _resting_ state
   is its finished, fully-legible state. Motion lives only inside
   `prefers-reduced-motion: no-preference`. With no JS, reduced motion, or an
   older engine, the site reads as complete — nothing essential hides behind an
@@ -36,7 +36,7 @@ The constraints I held myself to. They're the actual point of the project.
 - **A small dependency tree is a feature.** Runtime deps: `next`, `react`,
   `react-dom`, `geist`. That's the list. Less to audit, less to break, less to
   ship.
-- **Honest affordances.** A card that looks clickable *is* a link; one with no
+- **Honest affordances.** A card that looks clickable _is_ a link; one with no
   destination yet gets its own "in progress" hover language and a default
   cursor. The UI never lies about what it does.
 
@@ -44,15 +44,15 @@ The constraints I held myself to. They're the actual point of the project.
 
 ## Stack
 
-| Layer | Choice | Why |
-|---|---|---|
-| Framework | **Next.js 16** (App Router) | Static pre-render, metadata/OG, font optimization, build pipeline |
-| UI | **React 19** | Components driven from typed data, not copy-paste markup |
-| Language | **TypeScript** | Section content is typed (`Role`, `Capability`, `Post`) — a missing field fails the build, not production |
-| Styling | **Tailwind CSS v4** + a small `globals.css` motion layer | Utilities for layout, hand-written CSS for the scroll-driven animation system |
-| Type | **Geist Sans / Mono** + **Cormorant Garamond** | Technical voice + editorial display voice, self-hosted via `next/font` |
-| Icons / OG | **`next/og`** | Favicon and Open Graph image generated dynamically |
-| Hosting | **Vercel** | — |
+| Layer      | Choice                                                   | Why                                                                                                       |
+| ---------- | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Framework  | **Next.js 16** (App Router)                              | Static pre-render, metadata/OG, font optimization, build pipeline                                         |
+| UI         | **React 19**                                             | Components driven from typed data, not copy-paste markup                                                  |
+| Language   | **TypeScript**                                           | Section content is typed (`Role`, `Capability`, `Post`) — a missing field fails the build, not production |
+| Styling    | **Tailwind CSS v4** + a small `globals.css` motion layer | Utilities for layout, hand-written CSS for the scroll-driven animation system                             |
+| Type       | **Geist Sans / Mono** + **Cormorant Garamond**           | Technical voice + editorial display voice, self-hosted via `next/font`                                    |
+| Icons / OG | **`next/og`**                                            | Favicon and Open Graph image generated dynamically                                                        |
+| Hosting    | **Vercel**                                               | —                                                                                                         |
 
 ---
 
@@ -71,7 +71,7 @@ A few decisions worth calling out, since they're where the judgment lives:
   `--dot-shift`) pins each role's node onto its segment without reflowing the
   labels.
 - **`Stack.tsx`** — the "living index": each capability's coral mastery-bar
-  draws to an *honest* weight, so the section is a self-portrait, not a flat
+  draws to an _honest_ weight, so the section is a self-portrait, not a flat
   word-list.
 - **`Hero.tsx` / `AsciiPortrait.tsx`** — the genuinely interactive piece: a
   cursor-reactive ASCII portrait, lazy-loaded and hidden below `lg` to keep
@@ -131,4 +131,4 @@ app/
 
 ---
 
-<sub>Designed and built solo. © Om Sharma.</sub>
+<sub>Designed and built solo. © Deepesh Chourasia.</sub>

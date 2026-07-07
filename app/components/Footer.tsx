@@ -3,28 +3,28 @@ export default function Footer() {
     {
       label: 'Reach',
       items: [
-        { text: 'justomsharma@gmail.com', href: 'mailto:justomsharma@gmail.com' },
-        { text: '+91 81789 80973', href: 'tel:+918178980973' },
+        { text: 'deepeshovercoder@gmail.com', href: 'mailto:deepeshovercoder@gmail.com' },
+        { text: '+91 99714 49567', href: 'tel:+919971449567' },
       ],
     },
     {
       label: 'Code',
       items: [
-        { text: 'GitHub', href: 'https://github.com/justomsharma' },
+        { text: 'GitHub', href: 'https://github.com/deepeshovercoder' },
         { text: 'Resume', href: '/resume.pdf', newTab: true },
       ],
     },
     {
-      label: 'Words',
+      label: 'Social',
       items: [
-        { text: 'Medium', href: 'https://medium.com/@OmsharmaOfficial' },
-        { text: 'LinkedIn', href: 'https://linkedin.com/in/omsharmaofficial' },
+        { text: 'LeetCode', href: 'https://leetcode.com/deepeshovercoder' },
+        { text: 'LinkedIn', href: 'https://www.linkedin.com/in/deepesh-chourasia' },
       ],
     },
     {
       label: 'Location',
       items: [
-        { text: 'Bangalore, India', href: '#' },
+        { text: 'Gurugram, India', href: '#' },
         { text: 'UTC+5:30', href: '#' },
       ],
     },
@@ -61,7 +61,7 @@ export default function Footer() {
       </div>
 
       <div className="mt-16 flex justify-between border-t border-rule pt-6 font-mono text-[11px] uppercase tracking-[0.15em] text-muted">
-        <div>© Om Sharma · 2026</div>
+        <div>© Deepesh Chourasia · 2026</div>
         <div>Built solo</div>
       </div>
     </footer>

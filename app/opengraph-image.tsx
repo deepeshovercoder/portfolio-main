@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 
-export const alt = 'Om Sharma — Engineer building real-time AI systems'
+export const alt = 'Deepesh Chourasia — Engineer building real-time AI systems'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -42,7 +42,7 @@ export default async function OG() {
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
             <div style={{ width: 10, height: 10, borderRadius: 999, background: '#FF6B47' }} />
-            BANGALORE, INDIA
+            GURUGRAM, INDIA
           </div>
           <div style={{ color: '#FF6B47' }}>OMSHARMA.DEV</div>
         </div>
@@ -59,7 +59,7 @@ export default async function OG() {
               display: 'flex',
             }}
           >
-            Om Sharma<span style={{ color: '#FF6B47' }}>.</span>
+            Deepesh Chourasia<span style={{ color: '#FF6B47' }}>.</span>
           </div>
           <div
             style={{
@@ -89,7 +89,7 @@ export default async function OG() {
           }}
         >
           <div>VOICE · LLM · LATENCY</div>
-          <div>BANGALORE · 2026</div>
+          <div>GURUGRAM · 2026</div>
         </div>
       </div>
     ),

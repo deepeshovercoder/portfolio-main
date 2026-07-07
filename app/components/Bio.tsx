@@ -7,11 +7,11 @@ export default function Bio() {
 
       <div className="font-serif text-[22px] leading-[1.65] text-ink">
         <p className="mb-6 first:first-letter:float-left first:first-letter:mr-3 first:first-letter:mt-2 first:first-letter:font-serif first:first-letter:text-[80px] first:first-letter:font-normal first:first-letter:italic first:first-letter:leading-[0.85] first:first-letter:text-accent">
-          I&apos;m an engineer at <em className="not-italic text-accent">Jobtwine</em>, where our team builds real-time voice AI for enterprise interview screening — the kind of system where latency, reliability, and conversation quality decide whether the product works. Earlier I worked on RAG pipelines and LLM fine-tuning at <em className="not-italic text-accent">Darwix AI</em> and <em className="not-italic text-accent">VDOIT Technologies</em>.
+          I&apos;m a software engineer at <em className="not-italic text-accent">InstaSpaces</em>, where I build the Java Spring Boot backend powering booking, payments, invoicing, and user dashboards for 30K+ monthly users — the kind of system where transactional correctness and query performance decide whether the product actually works under load. Earlier I built full-stack features as an intern at <em className="not-italic text-accent">RB Corporation Holdings</em>.
         </p>
 
         <p className="text-muted">
-          On my own time I build small tools that scratch real itches — <em className="not-italic text-accent">JiraGenie</em>, a natural-language CLI for Jira with a self-healing workflow engine, is the current one. I write about what I learn shipping models into production: the gaps where the model second-guesses itself, the network hops that quietly cost you a turn.
+          On my own time I keep sharpening the fundamentals — I&apos;ve solved over 400 DSA problems on LeetCode and Hackerrank and qualified GATE CSE 2024. I like the unglamorous half of backend work: idempotent webhooks, SQL indexes that turn a <strong>2-second</strong> query into a <strong>200ms</strong> one, and pipelines that turn a manual 2-hour process into a 2-minute one.
         </p>
       </div>
     </section>

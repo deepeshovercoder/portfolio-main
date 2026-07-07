@@ -15,7 +15,7 @@ export default function Nav() {
           href="#top"
           className="font-sans text-[15px] font-semibold tracking-[-0.01em] text-ink"
         >
-          Om Sharma<span className="text-accent">.</span>
+          Deepesh Chourasia<span className="text-accent">.</span>
         </a>
         {/* trailing space reserves room for the fixed ThemeToggle that overlays
             the nav's right edge, so the last link never sits under it */}

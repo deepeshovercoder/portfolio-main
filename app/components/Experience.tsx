@@ -12,42 +12,30 @@ type Role = {
 
 const ROLES: Role[] = [
   {
-    company: 'Jobtwine',
-    role: 'Associate Software Engineer',
-    location: 'Bangalore',
-    dates: 'Jul 2025 — Present',
-    lead: 'Built a real-time AI interviewer used by several big firms.',
-    metrics: ['<2s latency', '300+ interviews/day', '3 enterprise clients'],
+    company: 'InstaSpaces',
+    role: 'Software Development Engineer-1',
+    location: 'Gurugram',
+    dates: 'Jul 2024 — Present',
+    lead: 'Built the Java Spring Boot backend powering bookings, payments, invoicing, and dashboards for 30K+ monthly users.',
+    metrics: ['30K+ monthly users', '~30% latency reduction', '2hr → 2min onboarding'],
     bullets: [
-      'Real-time AI interviewer — a streaming STT → LLM → TTS pipeline at sub-2s p50 latency.',
-      'Twilio ↔ LiveKit orchestration (WebRTC / SIP) with token-level TTS streaming cut per-turn latency ~3s.',
-      'Queue-based dispatch with multi-LLM failover, serving several big firms.',
+      'Developed and maintained Java Spring Boot backend services powering booking, payments, invoicing, and user dashboards for 30K+ monthly users.',
+      'Designed relational data models, JPA entities, and optimized SQL queries & indexes, reducing high-traffic API latency by ~30%.',
+      'Implemented an idempotent payment webhook system with transactional guarantees to prevent double-bookings and duplicate payments.',
+      'Engineered a venue onboarding automation pipeline (Google Sheets → Backend), cutting manual onboarding from 2 hours to 2 minutes.',
     ],
   },
   {
-    company: 'Darwix AI',
-    role: 'Software Engineer, AI Systems',
+    company: 'RB Corporation Holdings',
+    role: 'Full-Stack Developer',
     location: 'Gurugram',
-    dates: 'May 2025 — Jul 2025',
-    lead: 'Built real-time sales-call analysis and document-ingestion systems.',
-    metrics: ['+40% chunking accuracy', 'real-time call analysis', '2-channel desktop client'],
+    dates: 'Feb 2024 — Apr 2024',
+    lead: 'Built backend modules and contributed across the API lifecycle for production applications.',
+    metrics: ['Agile delivery', 'API dev & testing', 'Production deployments'],
     bullets: [
-      'Document-ingestion engine (Pinecone + PostgreSQL) with auto type-detection — +40% chunking accuracy.',
-      'Real-time sales-call analysis: speaker diarization, live transcription & performance scoring.',
-      'Cross-platform Windows / Linux client streaming dual-channel call audio over WebSocket.',
-    ],
-  },
-  {
-    company: 'VDOIT Technologies',
-    role: 'Software Engineer, AI / ML',
-    location: 'Gurugram',
-    dates: 'Jan 2024 — Apr 2025',
-    lead: 'Built high-scale backends and RAG pipelines for domain-specific LLMs.',
-    metrics: ['100K+ concurrent users', 'RAG pipelines', 'STAR performer'],
-    bullets: [
-      'Backend for 100K+ concurrent users on Django with a multithreaded architecture.',
-      'Retrieval-augmented generation (RAG) pipelines over vector search for contextual document retrieval.',
-      'Fine-tuned domain LLMs with LoRA / QLoRA. Awarded STAR Performer.',
+      'Developed backend modules using Java and Spring Boot following Agile development practices.',
+      'Contributed to API development, testing, debugging, and deployment activities for production applications.',
+      'Participated in code reviews and collaborated with team members to improve application quality and maintainability.',
     ],
   },
 ]
@@ -55,9 +43,8 @@ const ROLES: Role[] = [
 // Circuit-trace rail: vertical runs joined by short diagonal jogs. Each role's
 // node sits on the segment that runs past its height — RAIL_X is that segment's
 // x (in the 0–32 viewBox) per node, so the dot can be nudged onto the line.
-const RAIL_PATH =
-  'M16,0 L16,150 L10,180 L10,440 L22,470 L22,860 L16,890 L16,1000'
-const RAIL_X = [16, 10, 22]
+const RAIL_PATH = 'M16,0 L16,220 L10,260 L10,1000'
+const RAIL_X = [16, 10]
 const VIEWBOX_W = 32
 const RAIL_PX = 40 // .exp-rail width — viewBox x maps to px at RAIL_PX / VIEWBOX_W
 
@@ -65,7 +52,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      className="mx-auto max-w-[1180px] border-t border-rule px-6 py-32 md:px-12 md:py-36"
+      className="mx-auto max-w-[1180px] border-t border-rule px-6 py-32 md:px-12 md:py-26"
     >
       <p className="mb-6 font-mono text-[11px] uppercase tracking-[0.3em] text-accent">
         § 2 — Experience
@@ -78,7 +65,6 @@ export default function Experience() {
       </h2>
 
       <div className="exp">
-        {/* the geometric line itself — purely decorative, drawn by CSS */}
         <div className="exp-rail hidden md:block" aria-hidden>
           <svg
             className="exp-svg"
@@ -86,7 +72,6 @@ export default function Experience() {
             preserveAspectRatio="none"
             fill="none"
           >
-            {/* circuit-trace route: vertical runs joined by short diagonal jogs */}
             <path
               className="rail-base"
               d={RAIL_PATH}
@@ -104,11 +89,9 @@ export default function Experience() {
           </svg>
         </div>
 
-        {/* content rows — each role sits beside its node, on the same grid row */}
         <div className="exp-rows grid grid-cols-1 md:grid-cols-[160px_1fr]">
           {ROLES.map((r, i) => (
             <div key={r.company} className="contents">
-              {/* rail node, aligned to this role's heading */}
               <div
                 className={`exp-node hidden md:flex md:items-start md:gap-3 md:pl-[15px] ${
                   i === 0 ? 'pt-0' : 'pt-12'
@@ -116,8 +99,6 @@ export default function Experience() {
                 style={
                   {
                     '--at': (i / ROLES.length).toFixed(3),
-                    // shift the dot from its column slot (x=16) onto this
-                    // node's rail segment, without reflowing the labels
                     '--dot-shift': `${(((RAIL_X[i] ?? 16) - 16) * RAIL_PX) / VIEWBOX_W}px`,
                   } as CSSProperties
                 }
@@ -129,7 +110,6 @@ export default function Experience() {
                 </span>
               </div>
 
-              {/* role content — unchanged */}
               <article
                 className={`group border-t border-rule py-12 transition-all duration-500 ${
                   i === 0 ? 'border-t-0 pt-0' : ''
@@ -148,21 +128,14 @@ export default function Experience() {
                   {r.role} · {r.location}
                 </p>
 
-                {/* Lead line — the calm secondary anchor: plain-language
-                    "what I built". Company stays the hero; this supports it. */}
                 <p className="mb-4 max-w-[42ch] text-[18px] leading-[1.45] text-ink/90 md:text-[20px]">
                   {r.lead}
                 </p>
 
-                {/* Metrics — one quiet inline row, separated by middots. No
-                    coral, no big numbers: support for the lead, not a dashboard. */}
                 <p className="exp-metrics mb-6 font-mono text-[11px] tracking-[0.06em] text-muted">
                   {r.metrics.join('  ·  ')}
                 </p>
 
-                {/* Native <details> — zero-JS expand/collapse. Current role
-                    open by default; others collapsed to keep the section short.
-                    Works without JS and is keyboard-accessible out of the box. */}
                 <details className="exp-details" open={i === 0}>
                   <summary className="exp-summary inline-flex cursor-pointer select-none items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
                     <span className="exp-summary-show">View details</span>

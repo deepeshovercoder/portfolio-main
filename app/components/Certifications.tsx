@@ -1,17 +1,6 @@
-import type { CSSProperties } from 'react'
+'use client'
 
-// CERTIFICATIONS — "The Constellation". Each credential is a star on a horizontal
-// coral rail. As the section scrolls into view the rail draws left-to-right and
-// the nodes ignite in sequence — a lit dot fills coral and casts the same
-// three-blade fan glow the experience rail uses, so this reads as a sibling of
-// § 2, not a bolt-on. The card beneath each star fades up on its own timeline.
-//
-// All motion is pure CSS scroll-driven animation (animation-timeline: view()) —
-// no JS, no IntersectionObserver, no listeners, nothing on the main thread, and
-// zero bytes added to the critical path. Defaults are the finished, fully-lit
-// state, so with no JS / under prefers-reduced-motion / on older browsers it
-// reads as a complete, legible index. It holds one star gracefully and grows
-// into a row (wrapping) as more are added.
+import { useRef, useState, useEffect } from 'react'
 
 type Cert = {
   title: string
@@ -26,41 +15,118 @@ const CERTS: Cert[] = [
     title: 'AI Fluency: Framework & Foundations',
     issuer: 'Anthropic',
     date: 'Jul 2026',
-    credentialId: 'etenep6o89iu',
-    url: 'https://verify.skilljar.com/c/etenep6o89iu',
+    credentialId: 'xmjs8ecpw654',
+    url: 'https://verify.skilljar.com/c/xmjs8ecpw654',
+  },
+  {
+    title: 'Introduction to Model Context Protocol',
+    issuer: 'Anthropic',
+    date: 'Jul 2026',
+    credentialId: '39cezi9wc2nc',
+    url: 'https://verify.skilljar.com/c/39cezi9wc2nc',
+  },
+  {
+    title: 'Problem Solving Certificate',
+    issuer: 'Hackerrank',
+    date: 'June 2024',
+    credentialId: '139a45badd94',
+    url: 'https://www.hackerrank.com/certificates/iframe/139a45badd94',
+  },
+  {
+    title: 'SQL (Intermediate) Certificate',
+    issuer: 'Hackerrank',
+    date: 'Feb 2024',
+    credentialId: 'e7b814613833',
+    url: 'https://www.hackerrank.com/certificates/iframe/e7b814613833',
   },
 ]
 
 export default function Certifications() {
+  const trackRef = useRef<HTMLUListElement>(null)
+  const [canLeft, setCanLeft] = useState(false)
+  const [canRight, setCanRight] = useState(true)
+
+  const updateArrows = () => {
+    const el = trackRef.current
+    if (!el) return
+    setCanLeft(el.scrollLeft > 4)
+    setCanRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4)
+  }
+
+  useEffect(() => {
+    updateArrows()
+    const el = trackRef.current
+    if (!el) return
+    el.addEventListener('scroll', updateArrows, { passive: true })
+    window.addEventListener('resize', updateArrows)
+    return () => {
+      el.removeEventListener('scroll', updateArrows)
+      window.removeEventListener('resize', updateArrows)
+    }
+  }, [])
+
+  const scrollByCard = (dir: 1 | -1) => {
+    const el = trackRef.current
+    if (!el) return
+    const card = el.querySelector('.cert-star') as HTMLElement | null
+    const step = card ? card.offsetWidth + 32 : 320
+    el.scrollBy({ left: dir * step, behavior: 'smooth' })
+  }
+
   return (
     <section
       id="certifications"
-      className="mx-auto max-w-[1180px] border-t border-rule px-6 py-32 md:px-12 md:py-36"
+      className="mx-auto max-w-[1180px] border-t border-rule px-6 py-32 md:px-12 md:py-26"
     >
-      <p className="mb-6 font-mono text-[11px] uppercase tracking-[0.3em] text-accent">
-        § 4 — Certifications
-      </p>
-      <h2
-        className="mb-16 font-serif font-light leading-[0.95] tracking-[-0.03em]"
-        style={{ fontSize: 'clamp(48px, 8vw, 96px)' }}
-      >
-        What I&apos;ve <span className="italic text-accent">earned.</span>
-      </h2>
+      <div className="mb-16 flex flex-wrap items-end justify-between gap-8">
+        <div>
+          <p className="mb-6 font-mono text-[11px] uppercase tracking-[0.3em] text-accent">
+            § 4 — Certifications
+          </p>
+          <h2
+            className="font-serif font-light leading-[0.95] tracking-[-0.03em]"
+            style={{ fontSize: 'clamp(48px, 8vw, 96px)' }}
+          >
+            What I&apos;ve <span className="italic text-accent">earned.</span>
+          </h2>
+        </div>
+
+        {/* arrow controls */}
+        <div className="hidden gap-3 md:flex">
+          <button
+            type="button"
+            aria-label="Scroll certificates left"
+            onClick={() => scrollByCard(-1)}
+            disabled={!canLeft}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-rule text-ink transition-colors duration-300 hover:border-ink/40 disabled:opacity-30"
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            aria-label="Scroll certificates right"
+            onClick={() => scrollByCard(1)}
+            disabled={!canRight}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-rule text-ink transition-colors duration-300 hover:border-ink/40 disabled:opacity-30"
+          >
+            →
+          </button>
+        </div>
+      </div>
 
       <div className="cert-field">
-        {/* the horizontal rail — purely decorative, drawn by CSS on scroll.
-            Desktop only; on mobile the cards simply stack. */}
+        {/* the horizontal rail — purely decorative, drawn by CSS on scroll */}
         <div className="cert-rail hidden md:block" aria-hidden>
           <span className="cert-rail-base" />
           <span className="cert-rail-coral" />
         </div>
 
-        <ul className="cert-stars">
+        <ul ref={trackRef} className="cert-stars cert-scroll">
           {CERTS.map((c, i) => (
             <li
               key={c.credentialId}
               className="cert-star"
-              style={{ ['--i' as string]: i }}
+              style={{ ['--i' as string]: i } as React.CSSProperties}
             >
               {/* the node that sits on the rail — ignites in sequence on scroll */}
               <span className="cert-node hidden md:flex" aria-hidden>

@@ -1,9 +1,9 @@
 import AsciiPortraitLazy from './AsciiPortraitLazy'
 
 const SKILLS = [
-  { num: '01', label: 'Voice Agents' },
-  { num: '02', label: 'LLM Orchestration' },
-  { num: '03', label: 'Inference Infrastructure' },
+  { num: '01', label: 'Backend Systems' },
+  { num: '02', label: 'REST APIs & Microservices' },
+  { num: '03', label: 'SQL & Performance' },
 ]
 
 export default function Hero() {
@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="seq-status flex items-center justify-between font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
         <span className="flex items-center gap-2">
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-accent" />
-          Bangalore, India
+          Gurugram, India
         </span>
       </div>
 
@@ -25,24 +25,21 @@ export default function Hero() {
         {/* name — spans the full width so it's never constrained by the portrait */}
         <h1
           className="seq-name font-sans font-bold leading-[0.9] tracking-[-0.04em] text-ink"
-          style={{ fontSize: 'clamp(64px, 13vw, 200px)' }}
+          style={{ fontSize: 'clamp(44px, 15vw, 100px)' }}
         >
-          Om Sharma<span className="text-accent">.</span>
+          Deepesh Chourasia<span className="text-accent">.</span>
         </h1>
 
-        {/* below the name: text on the left, interactive portrait on the right.
-            A real grid on lg+ (the portrait is in normal flow, so it can never
-            overlap the text or steal its pointer events). Stacks to single
-            column below lg, where the portrait is simply hidden. */}
+        {/* below the name: text on the left, interactive portrait on the right. */}
         <div className="mt-6 lg:grid lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-10 xl:gap-16">
           <div>
-            {/* tagline — parallax wrapper is separate from the entrance-animated text */}
+            {/* tagline */}
             <div className="hero-parallax max-w-[820px]">
               <p
                 className="seq-tagline font-sans font-semibold leading-[1.05] tracking-[-0.02em] text-ink"
                 style={{ fontSize: 'clamp(28px, 4.5vw, 56px)' }}
               >
-                Building real-time AI systems that feel instant.
+                Building backend systems that scale under real traffic.
               </p>
             </div>
 
@@ -56,7 +53,6 @@ export default function Hero() {
                   <div className="mt-2 font-sans text-[15px] font-medium tracking-[-0.01em] text-ink">
                     {s.label}
                   </div>
-                  {/* a line that grows on hover — width only, 0.3s */}
                   <div className="mt-3 h-px w-6 bg-accent transition-[width] duration-300 ease-out group-hover:w-full" />
                 </li>
               ))}
@@ -64,8 +60,9 @@ export default function Hero() {
 
             {/* paragraph */}
             <p className="seq-para mt-12 max-w-[460px] text-[15px] leading-[1.7] text-muted">
-              I engineer voice agents, orchestrate LLM workflows, and build the
-              infrastructure that makes models feel alive inside two seconds.
+              I build Java Spring Boot backends and full-stack web applications —
+              designing REST APIs, optimizing SQL, and shipping features that
+              serve 30K+ monthly users in production.
             </p>
 
             {/* CTAs */}
@@ -93,8 +90,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* interactive ASCII portrait — move your cursor over it. Hidden below
-              lg to keep narrow screens clean and light. */}
+          {/* interactive ASCII portrait */}
           <div className="hidden justify-center lg:flex">
             <AsciiPortraitLazy />
           </div>
