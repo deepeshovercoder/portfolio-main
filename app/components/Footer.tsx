@@ -11,7 +11,7 @@ export default function Footer() {
       label: 'Code',
       items: [
         { text: 'LeetCode', href: 'https://leetcode.com/deepeshovercoder' },
-        { text: 'Resume', href: '/resume.pdf', newTab: true },
+        { text: 'Resume', href: '/deepesh_resume.pdf', newTab: true },
       ],
     },
     {

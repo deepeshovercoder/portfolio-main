@@ -77,7 +77,7 @@ export default function Hero() {
                 </span>
               </a>
               <a
-                href="/resume.pdf"
+                href="/deepesh_resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.15em] text-muted transition-colors duration-300 hover:text-ink"
