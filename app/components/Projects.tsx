@@ -37,7 +37,7 @@ export default function Projects() {
         </div>
 
         {/* JiraGenie */}
-        <a
+        {/* <a
           href="https://github.com/justomsharma/jiragenie"
           target="_blank"
           rel="noopener noreferrer"
@@ -54,7 +54,27 @@ export default function Projects() {
               Natural-language CLI for Jira. LLM intent parser. Self-healing workflow transition engine — walks workflow graphs with a loop guard, auto-repairs failed transitions.
             </p>
           </div>
-        </a>
+        </a> */}
+
+        {/* KBForTec */}
+        {/* <a
+          href="https://github.com/deepeshovercoder/kbfortech"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group col-span-1 row-span-1 flex flex-col justify-between rounded-sm border border-rule bg-ink/[0.025] p-7 transition-[transform,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-ink/25 md:col-span-2"
+        >
+          <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-accent">
+            2026 · Open source
+          </p>
+          <div>
+            <h3 className="font-serif text-[32px] font-normal leading-[1.05] tracking-[-0.02em] text-ink/85 transition-colors duration-300 group-hover:text-ink">
+              <span className="italic">KBForTech LLP</span>
+            </h3>
+            <p className="mt-2 text-[13px] leading-[1.55] text-muted">
+              Natural-language CLI for Jira. LLM intent parser. Self-healing workflow transition engine — walks workflow graphs with a loop guard, auto-repairs failed transitions.
+            </p>
+          </div>
+        </a> */}
 
         {/* OncoVision — no public link yet, so non-interactive. */}
         <div
@@ -96,7 +116,7 @@ export default function Projects() {
 
         {/* This site */}
         <a
-          href="https://github.com/justomsharma/portfolio"
+          href="https://github.com/deepeshovercoder/portfolio-main"
           target="_blank"
           rel="noopener noreferrer"
           className="group col-span-1 row-span-1 flex flex-col justify-between rounded-sm border border-rule bg-ink/[0.025] p-7 transition-[transform,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-ink/25 md:col-span-2"

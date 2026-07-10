@@ -10,14 +10,14 @@ export default function Footer() {
     {
       label: 'Code',
       items: [
-        { text: 'GitHub', href: 'https://github.com/deepeshovercoder' },
+        { text: 'LeetCode', href: 'https://leetcode.com/deepeshovercoder' },
         { text: 'Resume', href: '/resume.pdf', newTab: true },
       ],
     },
     {
       label: 'Social',
       items: [
-        { text: 'LeetCode', href: 'https://leetcode.com/deepeshovercoder' },
+        { text: 'GitHub', href: 'https://github.com/deepeshovercoder' },
         { text: 'LinkedIn', href: 'https://www.linkedin.com/in/deepesh-chourasia' },
       ],
     },
@@ -36,7 +36,7 @@ export default function Footer() {
         className="mb-20 max-w-[900px] font-serif font-light italic leading-[1.15] tracking-[-0.02em]"
         style={{ fontSize: 'clamp(36px, 5vw, 64px)' }}
       >
-        I&apos;m interested in the unglamorous infrastructure of intelligence — the queues, the streaming, the <span className="text-accent">two-second pipelines</span> that decide whether the model feels alive.
+        I&apos;m drawn to the unglamorous infrastructure behind the product — the SQL indexes, the idempotent webhooks, the <span className="text-accent">queries that decide</span> whether the app feels fast.
       </p>
 
       <div className="grid grid-cols-2 gap-8 border-t border-rule pt-12 md:grid-cols-4">
