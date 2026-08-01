@@ -10,25 +10,25 @@ type Post = {
 }
 
 const POSTS: Post[] = [
-  {
+   {
     num: '№ 01',
+    prefix: 'Preventing Double-Bookings:',
+    italicWord: ' How I Built an Idempotent Payment Webhook System',
+    suffix: '',
+    title: '',
+    meta: 'Medium ·August 2026· 6 min',
+    href: 'https://medium.com/@deepeshovercoder/preventing-double-bookings-how-i-built-an-idempotent-payment-webhook-system-e81e0e95eb2f',
+  },
+  {
+    num: '№ 02',
     prefix: 'Every Junior Developer Wants to Learn Kubernetes.',
     italicWord: ' Almost None Need It. ',
-    suffix: ': The tool isn’t the problem. Learning it before you’re ready is.',
+    suffix: '',
     title: '',
     meta: 'Medium · July 2026 · 10 min',
     href: 'https://medium.com/@deepeshovercoder/every-junior-developer-wants-to-learn-kubernetes-almost-none-need-it-8e926df113de',
   },
-  {
-    num: '№ 02',
-    prefix: 'Stop Building CRUD APIs. ',
-    italicWord: 'Start Designing Systems.',
-    suffix: '',
-    title: '',
-    meta: 'Forthcoming · July 2026',
-    href: '#',
-    forthcoming: true,
-  },
+ 
 ]
 
 export default function Writing() {

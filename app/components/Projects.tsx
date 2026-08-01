@@ -75,7 +75,7 @@ export default function Projects() {
         </div>
 
         {/* Latency visualizer — forthcoming, no destination yet. */}
-        <div
+       <div
           className="proj-still col-span-1 row-span-1 flex cursor-default flex-col justify-between rounded-sm border border-rule bg-ink/[0.025] p-7 transition-[transform,border-color] duration-500 ease-out hover:-translate-y-1 hover:border-accent/30 md:col-span-2"
         >
           <p className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.15em] text-accent">
@@ -83,14 +83,14 @@ export default function Projects() {
               aria-hidden
               className="inline-block h-1.5 w-1.5 rounded-full border border-accent"
             />
-            Forthcoming · July 2026
+            In progress
           </p>
           <div>
             <h3 className="font-serif text-[32px] font-normal leading-[1.05] tracking-[-0.02em] text-ink/85">
-              Latency <span className="italic">visualizer</span>
+              TaskFlow <span className="italic">Pro</span>
             </h3>
             <p className="mt-2 text-[13px] leading-[1.55] text-muted">
-              Interactive widget showing real-time STT → LLM → TTS latency breakdown. Embedded on this site once shipped. Demo of the work, on the work.
+              A Kanban-style task manager — Spring Boot backend on MariaDB, vanilla JS frontend. Rebuilding it feature by feature as a daily-commit habit project.
             </p>
           </div>
         </div>
