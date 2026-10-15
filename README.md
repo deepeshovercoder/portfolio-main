@@ -1,7 +1,7 @@
 # Deepesh Chourasia — Portfolio
 
 > Engineer building real-time AI systems that feel instant.
-> **Live → [omsharma.dev](https://omsharma.dev)**
+> **Live → [omsharma.dev](https://deepeshworkfolio.netlify.app/)**
 
 This is my personal site. It's also a working sample of how I build: pick the
 cheapest tool that does the job _correctly_, reach for the platform before a
